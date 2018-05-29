@@ -1,0 +1,56 @@
+<main>
+  <form>
+    <div class="row" *ngFor="let myFilter of this.filter;let i = index; ">
+      <div *ngIf="backend.columns != null" class="form-group col-md-4">
+        <select id="column" class="form-control" name="column{{i}}" [(ngModel)]="filter[i].column">
+          <option *ngFor="let category of backend.columns;">{{category}}</option>
+        </select>
+      </div>
+      <div *ngIf="backend.columns != null" class="form-group col-md-2">
+        <select id="operator" class="form-control" name="operator{{i}}" [(ngModel)]="filter[i].operator">
+          <option>></option>
+          <option>=</option>
+          <option><</option>
+        </select>
+      </div>
+      <div *ngIf="backend.columns != null" class="form-group col-md-4">
+        <input class="form-control" type="text" name="value{{i}}" [(ngModel)]="filter[i].value"/>
+      </div>
+      <div *ngIf="backend.columns != null" class="form-group col-md-2">
+        <button class="btn btn-danger" name="delete{{i}}" (click)="delete(i)">Delete</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <button class="btn btn-primary left" (click)="newFilter()">Add filter</button>
+      </div>
+      <div class="col-md-4 form-group">
+      </div>
+      <div class="col-md-2 form-group">
+        <select id="connector" class="form-control right" name="connector" [(ngModel)]="connector">
+          <option>And</option>
+          <option>Or</option>
+        </select>
+      </div>
+      <div class="col-md-2 form-group">
+        <button class="btn btn-primary" full (click)="sendQuery()">Fetch data</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="tableWrapper" *ngIf="this.data">
+    <table class="table">
+      <thead>
+      <tr>
+        <th *ngFor="let column of columns;">{{column}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let column of columns">{{row[column]}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+

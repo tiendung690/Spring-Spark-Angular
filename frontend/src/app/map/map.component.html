@@ -1,0 +1,17 @@
+<main>
+  <form>
+    <div class="row">
+      <div class="col-md-4 form-group">
+      </div>
+      <div class="col-md-2 form-group">
+        <input class="form-control" type="text" name="incidentNo" placeholder="IncidntNum" [(ngModel)]="incidentNo"/></div>
+      <div class="col-md-2 form-group">
+        <button class="btn btn-primary full" (click)="show()">Show</button>
+      </div>
+    </div>
+  </form>
+
+  <agm-map [latitude]="lat" [longitude]="long" #agmMap>
+    <agm-marker [latitude]="lat" [longitude]="long"></agm-marker>
+  </agm-map>
+</main>

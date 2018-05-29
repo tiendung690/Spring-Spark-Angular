@@ -1,0 +1,39 @@
+@import "../../scss/vars";
+
+main{
+  background-color: $background;
+  padding: 5vh 5vw 5vh 20vw;
+  .btn {
+    border: none !important;
+    border-radius: 0px;
+
+    &.btn-primary {
+      background-color: $darkBlue !important;
+
+    }
+    &.btn-danger {
+      width: 100%;
+    }
+
+  }
+
+  .full {
+    width: 100%;
+  }
+  .right {
+    float: right;
+  }
+  .left {
+    float: left;
+  }
+
+  .tableWrapper {
+    margin-top: 5vh;
+    overflow: auto;
+    max-width: 100vw;
+    max-height: 60vh;
+  }
+  agm-map{
+    height: 80vh;
+  }
+}

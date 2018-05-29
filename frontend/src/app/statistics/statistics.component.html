@@ -1,0 +1,24 @@
+<main>
+  <form>
+    <div *ngIf="backend.categories != null" class="form-group col-md-4">
+      <label for="inputState">Select category</label>
+      <select id="inputState" class="form-control" [(ngModel)]="selectedCategory" (change)="onChange()" name="selectCategory">
+        <option *ngFor="let category of backend.categories;">{{category}}</option>
+      </select>
+    </div>
+  </form>
+
+<div class="chartContainer">
+  <ngx-charts-bar-vertical *ngIf="this.data"
+    [results]="data"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel">
+  </ngx-charts-bar-vertical>
+</div>
+</main>

@@ -1,0 +1,19 @@
+@import "../../scss/vars";
+
+main{
+  background-color: $background;
+  padding: 5vh 5vw 5vh 20vw;
+  button {
+    float: right;
+    margin-top: 10px;
+    background-color: $darkBlue !important;
+    border: none !important;
+    border-radius: 0px;
+  }
+  .tableWrapper {
+    margin-top: 2vh;
+    overflow: auto;
+    max-width: 100vw;
+    max-height: 65vh;
+  }
+}
